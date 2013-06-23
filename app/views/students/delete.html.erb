@@ -1,0 +1,12 @@
+<%= link_to("<<back to list", {:action=>"list"}, :class=>"back-link") %>
+<div class="student delete">
+<h2>Delete student</h2>
+<%= form_for(:student, :url=>{:action=>"destroy", :id=>@student.id}) do |f| %>
+<p>Are u sure u wanna delete this student?</p>
+<p class="reference-name"><%=@student.name%></p>
+
+<div class="form-buttons">
+<%= submit_tag("Delete Student a/c") %>
+</div>
+<% end -%>
+</div>

@@ -1,0 +1,44 @@
+<% if !flash[:notice].to_i.blank? %>
+<div class="notice">
+<%= flash[:notice] %>
+</div>
+<% end -%>
+
+<div class="Students list">
+<h2>Students</h2>
+<table class="listing" summary="Students list">
+<tr class="header">
+<th>ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>  Student Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Username&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Standard&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Section&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>E-mail&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>Mobile&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr>
+
+
+<% @students.each do |student| %>
+<tr>
+<td><%=student.id%></td>
+<td><%=student.name%></td>
+<td><%=student.username%></td>
+<td class="center"><%=student.standard %></td>
+<td class="center"><%=student.section %></td>
+<td class="center"><%=student.email %></td>
+<td class="center"><%=student.mobile %></td>
+
+<td class="actions">
+
+	<%=link_to("Show", {:action=>"show", :id=>student.id}, :class=>"action show") %>
+<%= link_to("Edit", {:action=>"edit", :id=>student.id}, :class=>"action edit") %>
+<%= link_to("Delete", {:action=>"delete", :id=>student.id}, :class=>"action delete") %>
+</td>
+</tr>
+<% end %>
+
+
+</table>
+</div>
+
+<%= link_to("<<new student>>", {:action=>"new"}) %>

@@ -1,0 +1,52 @@
+<%= link_to("<<Back to list", {:action=>"list"}, :class=>"back-links") %>
+<div class="Student Update">
+<h2>Create Students</h2>
+<%= form_for(:student, :url=>{:action=>"update", :id=>@student.id}) do |f| %>
+<table summary="Students form fields">
+<tr >
+<th>Name*</th>
+<td><%=f.text_field(:name) %></td>
+</tr>
+
+
+<tr >
+<th>Username*</th>
+<td><%=f.text_field(:username) %></td>
+</tr>
+
+<tr >
+<th>Password*</th>
+<td><%=f.text_field(:password) %></td>
+</tr>
+
+<tr >
+<th>Standard*</th>
+<td><%= f.text_field(:standard) %></td>
+</tr>
+
+<tr >
+<th>Section*</th>
+<td><%= f.text_field(:section) %></td>
+</tr>
+
+<tr >
+<th>Email*</th>
+<td><%= f.text_field(:email) %></td>
+</tr>
+
+<tr >
+<th>Mobile</th>
+<td><%= f.text_field(:mobile) %></td>
+</tr>
+
+</table>
+<p> * fields marked with asterisk are compulsary fields</p>
+
+
+	<div class="form_buttons">
+
+	<%=submit_tag("Update Student info") %>
+
+	</div>
+<% end -%>
+</div>
