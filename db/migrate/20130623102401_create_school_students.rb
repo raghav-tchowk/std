@@ -7,7 +7,7 @@ class CreateSchoolStudents < ActiveRecord::Migration
     	t.string "standard", :null=>false
     	t.string "section", :null=>false
     	t.string "email", :null=>false
-    	t.integer "mobile"
+    	t.integer "mobile", :null=>true
     	
 
       t.timestamps

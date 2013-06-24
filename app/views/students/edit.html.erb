@@ -50,3 +50,9 @@
 	</div>
 <% end -%>
 </div>
+
+<div id="errors" style="color:red">
+	<% @student.errors.full_messages.each do |err| %>
+    	*<%= err %><br />
+    <% end %>
+</div>

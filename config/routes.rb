@@ -1,5 +1,5 @@
 Student::Application.routes.draw do
-  root :to => 'student#index'
+  root :to => 'students#list'
 
  # get "student/index"
 
